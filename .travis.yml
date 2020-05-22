@@ -6,4 +6,4 @@ before_install:
     - docker build -t bmaharjan/docker-boilerplate -f Dockerfile.dev .
 
 script:
-    - docker run bmaharjan/docker-boilerplate npm run test -- --coverage
+    - docker run -e CI=true bmaharjan/docker-boilerplate npm run test -- --coverage
