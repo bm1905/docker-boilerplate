@@ -1,0 +1,17 @@
+# This is for development setup.
+
+# Base image.
+FROM node:alpine
+
+# Assign Working Directory.
+WORKDIR '/app'
+
+# Copy required file and install dependencies.
+COPY package.json .
+RUN npm install
+
+# Copy all the files. This ensures node_modules wont be copied if we change code. :-)
+COPY . .
+
+# Startup Command
+CMD ["npm", "run", "start"]
