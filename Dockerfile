@@ -21,6 +21,9 @@ RUN npm run build
 # Base Image.
 FROM nginx
 
+# Port mapping for AWS.
+EXPOSE 80
+
 # Copy build folder to run phase.
 COPY --from=builder /app/build /usr/share/nginx/html
 
